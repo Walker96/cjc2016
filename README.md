@@ -39,6 +39,11 @@
 - 十七、网络科学：分析网络结构
 - 十八、课程总结与学生研究项目展示
 
+
+# 作业要求
+
+https://github.com/computational-class/cjc2016/wiki/%E4%BD%9C%E4%B8%9A
+
 # Tutorials
 http://github.com/computational-class/cjc2016/tree/gh-pages/code/
 
