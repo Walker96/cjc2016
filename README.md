@@ -11,7 +11,7 @@
 - 计算传播网：http://computational-communication.com
 
 
-![](/code/img/tianyaGephi.png) 
+<img src = '/code/img/tianyaGephi.png' width = 200px>
 
 
 # 时间安排
