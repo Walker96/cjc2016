@@ -10,6 +10,10 @@
 - 联系方式：wangchengjun@nju.edu.cn
 - 计算传播网：http://computational-communication.com
 
+
+![](/code/img/tianyaGephi.png) 
+
+
 # 时间安排
 
 - 36学时，两学分
