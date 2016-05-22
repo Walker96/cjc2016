@@ -30,7 +30,7 @@
 
 # 授课计划
 
-- 一、[计算新闻传播学简介](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.intro2cjc.slides.html#) [[课程要求](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/0.about2cjc.slides.html#/) [常见问题](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/0.common_questions.slides#/) [Jupyter Notebook使用](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.jupyter notebook.slides.html#/) [Slides制作方法](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.slides.slides.html#/)]
+- 一、[计算新闻传播学简介](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.intro2cjc.slides.html#) [[课程要求](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/0.about2cjc.slides.html#/)、 [常见问题](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/0.common_questions.slides#/) 、[Jupyter Notebook使用](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.jupyter notebook.slides.html#/)、 [Slides制作方法](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/01.slides.slides.html#/)]
 - 二、大数据简介 
     * [slides:大数据](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/02.bigdata.slides.html#/)
 - 三、数据科学的编程工具：Python使用简介（3h）
