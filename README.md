@@ -41,7 +41,7 @@
 - 九、机器学习: [分析天涯论坛的帖子](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/09.machine_learning_with_sklearn.slides.html#/)
 - 十、[文本挖掘简介](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/10.text_minning_gov_report.slides.html#/)
 - 十一、文本挖掘：[基于机器学习的情感分析](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/11.sentiment_classifier.slides.html#/)
-- 十二、文本挖掘：[主题模型](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/12.topic_models.slides.html#/) [[grahlab](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/12.topic-models-with-graphlab.slides.html#/)]
+- 十二、文本挖掘：[主题模型](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/12.topic_models.slides.html#/) [[graphlab](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/12.topic-models-with-graphlab.slides.html#/)]
 - 十三、计算传播应用：[推荐系统简介](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/13.recsys_intro.slides.html#/)
 - 十四、计算传播应用：推荐系统实践 [[音乐推荐](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/14.millionsong.slides.html#/)、 [电影推荐](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/14.movielens_recommendation-systems.slides.html#/)、[隐含语义模型](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/14.matrix-factorization-demo.slides.html#/)]
 - 十五、[网络科学理论简介](http://nbviewer.jupyter.org/github/computational-class/cjc2016/blob/gh-pages/slides/15.network_science_intro.slides.html#/)
