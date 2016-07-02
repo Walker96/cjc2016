@@ -1,8 +1,18 @@
-# 复旦大学新媒体硕士课程《计算新闻传播学》
+### 复旦大学新媒体硕士课程
+
+***
+***
+#《计算新闻传播学》
+***
+***
 
 - 授课人：王成军
 - 联系方式：wangchengjun@nju.edu.cn
 - 计算传播网：http://computational-communication.com
+
+
+<img src = '/code/img/tianyaGephi.png' width = 500px>
+
 
 # 时间安排
 
@@ -38,6 +48,11 @@
 - 十六、网络科学：描述节点属性
 - 十七、网络科学：分析网络结构
 - 十八、课程总结与学生研究项目展示
+
+
+# 作业信息
+
+https://github.com/computational-class/cjc2016/wiki/%E4%BD%9C%E4%B8%9A
 
 # Tutorials
 http://github.com/computational-class/cjc2016/tree/gh-pages/code/
