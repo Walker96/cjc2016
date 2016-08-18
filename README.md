@@ -55,6 +55,11 @@
 
 https://github.com/computational-class/cjc2016/wiki/%E4%BD%9C%E4%B8%9A
 
+
+# 作业信息
+
+https://github.com/computational-class/cjc2016/wiki/%E4%BD%9C%E4%B8%9A
+
 # Tutorials
 http://github.com/computational-class/cjc2016/tree/gh-pages/code/
 
