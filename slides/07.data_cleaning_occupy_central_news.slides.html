@@ -265,10 +265,11 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[171]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/Users/chengjun/github/cjc2016/data/ocuppy/central/zz-hk-2014-9.rtf&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 使用with open读取每一行数据</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/Users/chengjun/github/cjc2016/data/occupycentral/zz-hk-2014-10.rtf&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
    <span class="n">news</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 </pre></div>
 
@@ -279,10 +280,11 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[172]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 查看总共有多少行</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -293,11 +295,11 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[172]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[71]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>9480</pre>
+<pre>16541</pre>
 </div>
 
 </div>
@@ -305,13 +307,15 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[173]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">news</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)[:</span><span class="mi">500</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 注意：标题和版面之间存在一个空行！所以title是block的第4个元素。</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">news</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)[:</span><span class="mi">500</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -324,7 +328,48 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>\par\par 【本报讯】「\loch\af0\hich\af0\dbch\f15 \b\cf6 占领中环\loch\af0\hich\af0\dbch\f15 \b0\cf0 」在网上热烈讨论，部分网民支持\loch\af0\hich\af0\dbch\f15 \b\cf6 占中\loch\af0\hich\af0\dbch\f15 \b0\cf0 ，赞叹香港人的素质，对和平\loch\af0\hich\af0\dbch\f15 \b\cf6 占中\loch\af0\hich\af0\dbch\f15 \b0\cf0 感到骄傲。一则「在场人士的经历」贴子，转述朋友经历，指虽然金钟港铁站人山人海，却秩序井然，市民高呼自己香港自己救，她认为市民的美丽、齐心及纯良无法形容。\par\par 港铁车长：金钟需要你\par\par 亦有网民深受香港人的团结精神所动容，有市民在乘港铁前往支援\loch\af0\hich\af0\dbch\f15 \b\cf6 占中\loch\af0\hich\af0\dbch\f15 \b0\cf0 ，到达金钟站时，听到车长说的一句话，「金钟落车嘅乘客，请加油
+<pre>~~~~~~~~~~~~~~~~~~~~~~~~~~  #1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ \par
+
+am730 | 2014-10-31 \par
+
+A16| NEWS| C观点| By 施永青 \par 
+
+
+
+法治有整合社会功能 \par
+
+\par
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \par
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 需要对中文编码的对象使用中文的方式进行解码</span>
+<span class="k">print</span> <span class="n">news</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)[:</span><span class="mi">500</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>\par\par 前文已介绍过塔尔科特·帕森斯的AGIL理论中的Adaptation(适应)与Goal Attainment(达标)的社会功能，今天续谈Integration(整合)的功能。人类社会是一个复杂系统，大系统内还有很多次系统，这些系统既独立，又牵连；既矛盾，又互适；有时互相促进，有时互相制约。正如一个人，既是社会的成员，又是公司的雇员；既是别人的儿子，又是朋辈中的「大哥」；其言行会同时受所处的不同系统所影响。\par\par 这些错综复杂的系统之间不可能没有冲突，为了避免社会因纠纷得不到恰当的处理而分崩离析，社会必须发展出一套整合矛盾的方式，这就需要有司法制度。\par\par 按帕森斯的说法，法治的基础是先要界定产权。这样才能避免因争夺资源而产生无休止的冲突。再者，交易亦需要在产权获得界定后才能进行。有交易才有市场，才能透过市场机制进行公平竞争，推动经济发展。\par\par 另一方面，社会亦需要为人权下定义，这样，政府才能在有认受性的情况下组成，才能有效地去处理公众事务。此外，社会还需要有一套合乎公义的会议程序，以决定如何汇聚众人的意愿。\par\par 有了这些基础之
 </pre>
 </div>
 </div>
@@ -335,10 +380,11 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[174]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">stringclean</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 定义一个函数：实现解码、编码、清洗效果</span>
+<span class="k">def</span> <span class="nf">stringclean</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">r&#39;\loch\af0\hich\af0\dbch\f15 \b\cf6 &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">r&#39;\loch\af0\hich\af0\dbch\f15 \b0\cf0 &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -350,13 +396,101 @@ a.anchor-link {
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="s1">&#39;aabbccdd ee&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[87]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;bbccdd ee&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[175]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">stringclean</span><span class="p">(</span><span class="n">news</span><span class="p">[</span><span class="mi">17</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="s1">&#39;aabbccdd ee&#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[94]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>u&apos;ccdd ee&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="s1">&#39;aabbccdd ee&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;ab&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[103]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;abccdd ee&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 调用stringclean函数</span>
+<span class="k">print</span> <span class="n">stringclean</span><span class="p">(</span><span class="n">news</span><span class="p">[</span><span class="mi">17</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -369,7 +503,7 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> 【本报讯】「占领中环」在网上热烈讨论，部分网民支持占中，赞叹香港人的素质，对和平占中感到骄傲。一则「在场人士的经历」贴子，转述朋友经历，指虽然金钟港铁站人山人海，却秩序井然，市民高呼自己香港自己救，她认为市民的美丽、齐心及纯良无法形容。 港铁车长：金钟需要你 亦有网民深受香港人的团结精神所动容，有市民在乘港铁前往支援占中，到达金钟站时，听到车长说的一句话，「金钟落车嘅乘客，请加油，金钟需要你哋！」亦有网民被在旺角示威、齐心演唱本地乐队Beyond《光辉岁月》的市民所感动，「今天只有残留的躯壳，迎接光辉岁月，风雨中抱紧自由！」更认为这是香港人的歌。 然而亦有不少网民反对占中，担心运动带来负面影响。一位自称「师奶」的网民表示，占中行动令香港陷入混乱，应和平地寻求共识。有网民指行动已变质，太过煽情失去理性。亦有网民分析，认为目前政改框架非完美，但亦应「一人让一步」，而且部分人太偏激，会拖垮经济，比没有普选「死得更快」。更有人指自己支持争取民主，但占中以威胁方式难以达到目的，应有耐性一步一步去做，同时保障经济及民主发展。 
+<pre> 前文已介绍过塔尔科特·帕森斯的AGIL理论中的Adaptation(适应)与Goal Attainment(达标)的社会功能，今天续谈Integration(整合)的功能。人类社会是一个复杂系统，大系统内还有很多次系统，这些系统既独立，又牵连；既矛盾，又互适；有时互相促进，有时互相制约。正如一个人，既是社会的成员，又是公司的雇员；既是别人的儿子，又是朋辈中的「大哥」；其言行会同时受所处的不同系统所影响。 这些错综复杂的系统之间不可能没有冲突，为了避免社会因纠纷得不到恰当的处理而分崩离析，社会必须发展出一套整合矛盾的方式，这就需要有司法制度。 按帕森斯的说法，法治的基础是先要界定产权。这样才能避免因争夺资源而产生无休止的冲突。再者，交易亦需要在产权获得界定后才能进行。有交易才有市场，才能透过市场机制进行公平竞争，推动经济发展。 另一方面，社会亦需要为人权下定义，这样，政府才能在有认受性的情况下组成，才能有效地去处理公众事务。此外，社会还需要有一套合乎公义的会议程序，以决定如何汇聚众人的意愿。 有了这些基础之后，社会就可以发展出一整套司法制度，让成员知所行止，令社会的矛盾不会恶化。 英国人为香港留下的，可不只是一套可以依据的律例，而是一整套法治的理念与司法程序。香港的回归能进行得相对平稳，与特区政府基本上原封不动地承继了原有的司法系统有莫大的关系。 回归后，虽有人危言耸听，说香港的法治已死，但世人仍公认香港的法治达国际一流水准，而港人亦可以如常在香港生活与做生意，不觉有失去法治的实质威胁。直到占中运动的出现，香港人才真正感受到失去法治的害处。 占中运动挑战的可不只是个别「恶法」，而是侵犯了整个法治的根基——产权、人权与政府的执法权。 占领区的物业，地契上列明有Right of way，但现在占领者却不容停车场的车辆出入。这分明损害了这些物业的产权。现在政府却无法加以维护；法庭出了禁制令，占中者却一样藐视。这样发展下去，谁敢在香港置业？ 其实，损害产权等同损害人权，因为人权的一项重要内容，就是个人的财产应获保障。此外，人人都应有追求幸福的权利，但现在占领区生意难做，怎会不妨碍别人追求幸福？ 占中者把自己的行为说成是公民抗命，但公民抗命只是个人行为在道德上的解释，用来拒绝遵守某些个人不认同的法令还讲得通，但绝不可以借此损害他人的产权与人权。 再者，占中者现时在争取的是宪政改革，本应获社会上绝大多数人赞同才有条件实施，不宜用占领交通要津的方式去逼其他人就范。如果祭起公民抗命的旗帜就可以欲所欲为，只会天下大乱，令法治失去协调与整合作用。 
 </pre>
 </div>
 </div>
@@ -380,10 +514,11 @@ a.anchor-link {
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">news_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">stringclean</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">news</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 列表内的for循环</span>
+<span class="n">news_clean</span> <span class="o">=</span> <span class="p">[</span><span class="n">stringclean</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">news</span><span class="p">]</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">news_clean</span><span class="p">)</span>
 </pre></div>
 
@@ -395,11 +530,11 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[176]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>9480</pre>
+<pre>16541</pre>
 </div>
 
 </div>
@@ -410,10 +545,10 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[177]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">news_clean</span><span class="p">[</span><span class="mi">17</span><span class="p">][:</span><span class="mi">100</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">news_clean</span><span class="p">[</span><span class="mi">17</span><span class="p">][:</span><span class="mi">120</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -426,7 +561,7 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> 【本报讯】「占领中环」在网上热烈讨论，部分网民支持占中，赞叹香港人
+<pre> 前文已介绍过塔尔科特·帕森斯的AGIL理论中的Adaptation(适应)与Goal Attainment(达标)的社会功能
 </pre>
 </div>
 </div>
@@ -437,10 +572,10 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[181]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 定义两个函数</span>
 
 <span class="k">def</span> <span class="nf">deletetab</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -450,21 +585,162 @@ a.anchor-link {
 <span class="k">def</span> <span class="nf">flushPrint</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-    
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span> <span class="c1"># 清洗掉 </span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[183]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">readblocks</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on OutStream in module ipykernel.iostream object:
+
+class OutStream(__builtin__.object)
+ |  A file like object that publishes the stream to a 0MQ PUB socket.
+ |  
+ |  Output is handed off to an IO Thread
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, session, pub_thread, name, pipe=None)
+ |  
+ |  __next__(self)
+ |  
+ |  close(self)
+ |  
+ |  fileno(self)
+ |  
+ |  flush(self)
+ |      trigger actual zmq send
+ |      
+ |      send will happen in the background thread
+ |  
+ |  isatty(self)
+ |  
+ |  next = __next__(self)
+ |  
+ |  read(self, size=-1)
+ |  
+ |  readline(self, size=-1)
+ |  
+ |  set_parent(self, parent)
+ |  
+ |  write(self, string)
+ |  
+ |  writelines(self, sequence)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  closed
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  flush_interval = 0.2
+ |  
+ |  topic = None
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 调用deletetab</span>
+<span class="n">deletetab</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">a&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[95]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&apos;a&apos;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 演示：flushPrint</span>
+<span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">random</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+    <span class="n">flushPrint</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">def</span> <span class="nf">readblocks</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="n">copy</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">block</span> <span class="o">=</span> <span class="p">[]</span>
@@ -477,7 +753,7 @@ a.anchor-link {
                 <span class="nb">id</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;文章编号: &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
                 <span class="n">source</span> <span class="o">=</span> <span class="n">block</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="n">info</span> <span class="o">=</span> <span class="n">block</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-                <span class="n">title</span> <span class="o">=</span> <span class="n">deletetab</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">deletetab</span><span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># </span>
                 <span class="n">body</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">block</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
                 <span class="n">body</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
                 <span class="n">body</span> <span class="o">=</span> <span class="n">deletetab</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
@@ -501,13 +777,15 @@ a.anchor-link {
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[186]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">news_result</span> <span class="o">=</span> <span class="n">readblocks</span><span class="p">(</span><span class="n">news_clean</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 注意：标题和版面之间存在一个空行！所以title是block的第4个元素。</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">news</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)[:</span><span class="mi">500</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -520,7 +798,48 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>410</pre>
+<pre>~~~~~~~~~~~~~~~~~~~~~~~~~~  #1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~ \par
+
+am730 | 2014-10-31 \par
+
+A16| NEWS| C观点| By 施永青 \par 
+
+
+
+法治有整合社会功能 \par
+
+\par
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \par
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 按block清洗新闻报道</span>
+<span class="n">news_result</span> <span class="o">=</span> <span class="n">readblocks</span><span class="p">(</span><span class="n">news_clean</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>710</pre>
 </div>
 </div>
 
@@ -530,10 +849,11 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">news_result</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 新闻的数量</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">news_result</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -544,11 +864,11 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[187]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[82]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>412</pre>
+<pre>719</pre>
 </div>
 
 </div>
@@ -559,10 +879,11 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">news_result</span><span class="o">.</span><span class="n">keys</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 查看字典的keys</span>
+<span class="n">news_result</span><span class="o">.</span><span class="n">keys</span><span class="p">()[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -573,17 +894,45 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[190]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[83]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;201409015325665 &apos;,
- &apos;201409055305251 &apos;,
- &apos;201409165304250 &apos;,
- &apos;201409300050105 &apos;,
- &apos;201409290320076 &apos;]</pre>
+<pre>[&apos;201410230290186 &apos;,
+ &apos;201410080010030 &apos;,
+ &apos;201410229900052 &apos;,
+ &apos;201410060340162 &apos;,
+ &apos;201410115313102 &apos;]</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 查看字典的values</span>
+<span class="k">print</span> <span class="n">news_result</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>201410095304453 	大公报 	B01| 大公经济  	马鞍山地皮招标估值16.7亿 	&quot;          地皮密密推，马鞍山沙路地皮安排10月24日招标，12月5日截标，市场估值约15.5亿至16.7亿元，每呎4000至4300元。该地皮位于沙田市地段第601号，地盘面积约25.3万方呎，指定作私人住宅用途，可建总楼面38.75方呎。 中原测量师行执行董事张竞达表示，马鞍山耀沙街地皮属临海地段，尽揽海景，发展潜力优厚，将来可发展成豪宅出售，但与港铁站距离略远，此类型海景住宅供应于新界区属罕有，加上近日邻近之迎海．星湾御录理想销售成绩，将来亦会为区内提供商场等配套，预计发展商入标反应佳。惟近日新界区地皮均以较贴近市场下限价钱批出，加上市场对后市未感太乐观，加上近日「占中」事件持续等因素影响，预计多数发展商出价会相对保守，预期楼面呎价约4000元，总值约15.5亿元。美联测量师行董事林子彬表示，地皮虽则与马铁站距离较远，但料部分单位可坐拥海景，若以楼面呎价4300元计算，估值约16.7亿元。    &quot;
+</pre>
+</div>
 </div>
 
 </div>
@@ -592,10 +941,11 @@ a.anchor-link {
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[192]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-2014-9-clean.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 保存数据：将数据写入硬盘</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-2014-9-clean.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
      <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">news_result</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
          <span class="n">p</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">record</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -607,12 +957,13 @@ a.anchor-link {
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[194]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-2014-9-clean.txt&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 使用pandas读取数据，并查看。</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-2014-9-clean.txt&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
@@ -624,7 +975,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[194]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[58]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -733,11 +1084,13 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[197]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 使用os改变默认的工作路径</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/occupycentral/&#39;</span><span class="p">)</span>
+<span class="c1"># 使用glob读取某一类文件的所有名称</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="n">filenames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.rtf&#39;</span><span class="p">)</span>
 <span class="n">filenames</span>
@@ -751,7 +1104,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[197]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -766,7 +1119,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[198]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
@@ -775,7 +1128,7 @@ a.anchor-link {
         <span class="n">news</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
         <span class="n">news</span> <span class="o">=</span> <span class="p">[</span><span class="n">stringclean</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">news</span><span class="p">]</span>
         <span class="n">news_result</span> <span class="o">=</span> <span class="n">readblocks</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-all-clean.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/chengjun/github/cjc2016/data/zz-hk-all-clean2.txt&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">news_result</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
                 <span class="n">p</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">record</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>

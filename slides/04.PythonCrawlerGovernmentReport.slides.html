@@ -266,7 +266,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">urllib2</span>
@@ -322,17 +322,35 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># get the link for each year</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.hprc.org.cn/wxzl/wxysl/lczf/&quot;</span> 
 <span class="n">content</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)</span> 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span> 
-<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;bl&#39;</span><span class="p">})</span>   
+<span class="c1"># links = soup.find_all(&#39;td&#39;, {&#39;class&#39;, &#39;bl&#39;})   </span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;.bl a&#39;</span><span class="p">)</span>
+<span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>u&apos;./d12qgrdzfbg/201603/t20160318_369509.html&apos;</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -350,11 +368,10 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;bl&#39;</span><span class="p">)</span> 
-<span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -378,10 +395,10 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -394,7 +411,7 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;td class=&quot;bl&quot; width=&quot;274&quot;&gt;· &lt;a href=&quot;./d12qgrdzfbg/201603/t20160318_369509.html&quot; target=&quot;_blank&quot; title=&quot;2016年政府工作报告&quot;&gt;2016年政府工作报告&lt;/a&gt;&lt;/td&gt;
+<pre>./d12qgrdzfbg/201603/t20160318_369509.html
 </pre>
 </div>
 </div>
@@ -459,37 +476,10 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[u&apos;&apos;, u&apos;d12qgrdzfbg/201603/t20160318_369509.html&apos;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -513,10 +503,37 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">url</span> <span class="o">+</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>d12qgrdzfbg/201603/t20160318_369509.html
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">url</span> <span class="o">+</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -540,13 +557,34 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">hyperlinks</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="o">+</span> <span class="n">i</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">hyperlinks</span> <span class="o">=</span> <span class="p">[</span><span class="n">url</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">]</span>
+<span class="n">hyperlinks</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[u&apos;http://www.hprc.org.cn/wxzl/wxysl/lczf/d12qgrdzfbg/201603/t20160318_369509.html&apos;,
+ u&apos;http://www.hprc.org.cn/wxzl/wxysl/lczf/d12qgrdzfbg/201503/t20150318_319434.html&apos;,
+ u&apos;http://www.hprc.org.cn/wxzl/wxysl/lczf/d12qgrdzfbg/201403/t20140315_270863.html&apos;,
+ u&apos;http://www.hprc.org.cn/wxzl/wxysl/lczf/d12qgrdzfbg/201402/t20140214_266528.html&apos;,
+ u&apos;http://www.hprc.org.cn/wxzl/wxysl/lczf/dishiyijie/201402/t20140214_266527.html&apos;]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -711,14 +749,29 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">url_i</span> <span class="o">=</span> <span class="s1">&#39;http://www.hprc.org.cn/wxzl/wxysl/lczf/dishiyijie_1/200908/t20090818_27775.html&#39;</span>
 <span class="n">content</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url_i</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gb18030&#39;</span><span class="p">)</span>  
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span> 
-<span class="n">scripts</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)</span>
-<span class="n">scripts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#scripts = soup.find_all(&#39;script&#39;)</span>
+<span class="c1">#scripts[0]</span>
+
+<span class="n">scripts</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;td script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">scripts</span>
 </pre></div>
 
 </div>
@@ -729,11 +782,11 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[119]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;script&gt;\n\nfunction add(){\nwindow.external.AddFavorite(&quot;\u4f60\u7684\u7f51\u5740&quot;,&quot;\u6807\u9898&quot;);\n}\n\n\nfunction setHome(obj){\nvar tmp = new Object();\ntmp = obj;\ntmp.style.behavior=&quot;url(#default#homepage)&quot;;\ntmp.setHomePage(&quot;\u4f60\u7684\u7f51\u5740&quot;);\n}\n\n&lt;/script&gt;</pre>
+<pre>&lt;script&gt;\n\tvar currentPage = 0;//\u6240\u5728\u9875\u4ece0\u5f00\u59cb\n\tvar prevPage = currentPage-1//\u4e0a\u4e00\u9875\n\tvar \u4e0b\u4e00\u9875Page = currentPage+1//\u4e0b\u4e00\u9875\n\tvar countPage = 4//\u5171\u591a\u5c11\u9875\n\t//document.write(&quot;\u5171&quot;+countPage+&quot;\u9875&amp;nbsp;&amp;nbsp;&quot;);\n\t\n\t//\u5faa\u73af\n\tvar num = 17;\n\tfor(var i=0+(currentPage-1-(currentPage-1)%num) ; i&lt;=(num+(currentPage-1-(currentPage-1)%num))&amp;&amp;(i&lt;countPage) ; i++){\n\t\tif(countPage &gt;1){\n\t\t\tif(currentPage==i)\n\t\t\t\tdocument.write(&quot;\u3010&lt;span style=\\&quot;color:#FF0000;\\&quot; class=\\&quot;hui14_30_h\\&quot;&gt;&quot;+(i+1)+&quot;&lt;/span&gt;\u3011&amp;nbsp;&quot;);\n\t\t\telse if(i==0)\n\t\t\t\tdocument.write(&quot;&lt;a href=\\&quot;t20090818_27775.html\\&quot; class=\\&quot;hui14_30_h\\&quot;&gt;\u3010&quot;+(i+1)+&quot;\u3011&lt;/a&gt;&amp;nbsp;&quot;);\n\t\t\telse\n\t\t\t\tdocument.write(&quot;&lt;a href=\\&quot;t20090818_27775&quot;+&quot;_&quot; + i + &quot;.&quot;+&quot;html\\&quot; class=\\&quot;hui14_30_h\\&quot;&gt;\u3010&quot;+(i+1)+&quot;\u3011&lt;/a&gt;&amp;nbsp;&quot;);\n\t\t}\t\n\t}\n\t\n\tdocument.write(&quot;&lt;br&gt;&lt;br&gt;&quot;);\n\t//\u8bbe\u7f6e\u4e0a\u4e00\u9875\u4ee3\u7801\n\tif(countPage&gt;1&amp;&amp;currentPage!=0&amp;&amp;currentPage!=1)\n\t\tdocument.write(&quot;&lt;a href=\\&quot;t20090818_27775&quot;+&quot;_&quot; + prevPage + &quot;.&quot;+&quot;html\\&quot;&gt;&lt;span style=\\&quot;color:#0033FF;font-weight:bold\\&quot;&gt;\u4e0a\u4e00\u9875&lt;/span&gt;&lt;/a&gt;&amp;nbsp;&quot;);\n\telse if(countPage&gt;1&amp;&amp;currentPage!=0&amp;&amp;currentPage==1)\n\t\tdocument.write(&quot;&lt;a href=\\&quot;t20090818_27775.html\\&quot;&gt;&lt;span style=\\&quot;color:#0033FF;font-weight:bold\\&quot;&gt;\u4e0a\u4e00\u9875&lt;/span&gt;&lt;/a&gt;&amp;nbsp;&quot;);\n\t//else\n\t//\tdocument.write(&quot;\u4e0a\u4e00\u9875 &amp;nbsp;&quot;);\n\t\n\t\n\t//\u8bbe\u7f6e\u4e0b\u4e00\u9875\u4ee3\u7801 \n\tif(countPage&gt;1&amp;&amp;currentPage!=(countPage-1))\n\t\tdocument.write(&quot;&lt;a href=\\&quot;t20090818_27775&quot;+&quot;_&quot; + \u4e0b\u4e00\u9875Page + &quot;.&quot;+&quot;html\\&quot; &gt;&lt;span style=\\&quot;color:#0033FF;font-weight:bold\\&quot;&gt;\u4e0b\u4e00\u9875&lt;/span&gt;&lt;/a&gt; &amp;nbsp;&quot;);\n\t//else\n\t//\tdocument.write(&quot;\u4e0b\u4e00\u9875 &amp;nbsp;&quot;);\n\t\t\t\t\t \n\t&lt;/script&gt;</pre>
 </div>
 
 </div>
@@ -744,10 +797,10 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">scripts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">scripts</span><span class="o">.</span><span class="n">text</span>
 </pre></div>
 
 </div>
@@ -807,491 +860,10 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pyjsparser</span> <span class="kn">import</span> <span class="n">PyJsParser</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">PyJsParser</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;var $ = &quot;Hello!&quot;&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[133]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&apos;body&apos;: [{&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;$&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;Hello!&apos;},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;}],
- &apos;type&apos;: u&apos;Program&apos;}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">jp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">scripts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="n">jp</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[151]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&apos;body&apos;: [{&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;currentPage&apos;,
-      &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 0.0},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-  {&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;prevPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;-&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-  {&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;\u4e0b\u4e00\u9875Page&apos;,
-      &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;+&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-  {&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 4.0},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-  {&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;num&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;init&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 17.0},
-     &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-   &apos;kind&apos;: &apos;var&apos;,
-   &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-  {&apos;body&apos;: {&apos;body&apos;: [{&apos;alternate&apos;: None,
-      &apos;consequent&apos;: {&apos;body&apos;: [{&apos;alternate&apos;: {&apos;alternate&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;raw&apos;: None,
-                    &apos;type&apos;: u&apos;Literal&apos;,
-                    &apos;value&apos;: u&apos;&lt;a href=&quot;t20090818_27775&apos;},
-                   &apos;operator&apos;: u&apos;+&apos;,
-                   &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;_&apos;},
-                   &apos;type&apos;: u&apos;BinaryExpression&apos;},
-                  &apos;operator&apos;: u&apos;+&apos;,
-                  &apos;right&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-                  &apos;type&apos;: u&apos;BinaryExpression&apos;},
-                 &apos;operator&apos;: u&apos;+&apos;,
-                 &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;.&apos;},
-                 &apos;type&apos;: u&apos;BinaryExpression&apos;},
-                &apos;operator&apos;: u&apos;+&apos;,
-                &apos;right&apos;: {&apos;raw&apos;: None,
-                 &apos;type&apos;: u&apos;Literal&apos;,
-                 &apos;value&apos;: u&apos;html&quot; class=&quot;hui14_30_h&quot;&gt;\u3010&apos;},
-                &apos;type&apos;: u&apos;BinaryExpression&apos;},
-               &apos;operator&apos;: u&apos;+&apos;,
-               &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-                &apos;operator&apos;: u&apos;+&apos;,
-                &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-                &apos;type&apos;: u&apos;BinaryExpression&apos;},
-               &apos;type&apos;: u&apos;BinaryExpression&apos;},
-              &apos;operator&apos;: u&apos;+&apos;,
-              &apos;right&apos;: {&apos;raw&apos;: None,
-               &apos;type&apos;: u&apos;Literal&apos;,
-               &apos;value&apos;: u&apos;\u3011&lt;/a&gt;&amp;nbsp;&apos;},
-              &apos;type&apos;: u&apos;BinaryExpression&apos;}],
-            &apos;callee&apos;: {&apos;computed&apos;: False,
-             &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-             &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-             &apos;type&apos;: u&apos;MemberExpression&apos;},
-            &apos;type&apos;: u&apos;CallExpression&apos;},
-           &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-          &apos;consequent&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;left&apos;: {&apos;left&apos;: {&apos;raw&apos;: None,
-                &apos;type&apos;: u&apos;Literal&apos;,
-                &apos;value&apos;: u&apos;&lt;a href=&quot;t20090818_27775.html&quot; class=&quot;hui14_30_h&quot;&gt;\u3010&apos;},
-               &apos;operator&apos;: u&apos;+&apos;,
-               &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-                &apos;operator&apos;: u&apos;+&apos;,
-                &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-                &apos;type&apos;: u&apos;BinaryExpression&apos;},
-               &apos;type&apos;: u&apos;BinaryExpression&apos;},
-              &apos;operator&apos;: u&apos;+&apos;,
-              &apos;right&apos;: {&apos;raw&apos;: None,
-               &apos;type&apos;: u&apos;Literal&apos;,
-               &apos;value&apos;: u&apos;\u3011&lt;/a&gt;&amp;nbsp;&apos;},
-              &apos;type&apos;: u&apos;BinaryExpression&apos;}],
-            &apos;callee&apos;: {&apos;computed&apos;: False,
-             &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-             &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-             &apos;type&apos;: u&apos;MemberExpression&apos;},
-            &apos;type&apos;: u&apos;CallExpression&apos;},
-           &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-          &apos;test&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-           &apos;operator&apos;: u&apos;==&apos;,
-           &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 0.0},
-           &apos;type&apos;: u&apos;BinaryExpression&apos;},
-          &apos;type&apos;: u&apos;IfStatement&apos;},
-         &apos;consequent&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;left&apos;: {&apos;left&apos;: {&apos;raw&apos;: None,
-               &apos;type&apos;: u&apos;Literal&apos;,
-               &apos;value&apos;: u&apos;\u3010&lt;span style=&quot;color:#FF0000;&quot; class=&quot;hui14_30_h&quot;&gt;&apos;},
-              &apos;operator&apos;: u&apos;+&apos;,
-              &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-               &apos;operator&apos;: u&apos;+&apos;,
-               &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-               &apos;type&apos;: u&apos;BinaryExpression&apos;},
-              &apos;type&apos;: u&apos;BinaryExpression&apos;},
-             &apos;operator&apos;: u&apos;+&apos;,
-             &apos;right&apos;: {&apos;raw&apos;: None,
-              &apos;type&apos;: u&apos;Literal&apos;,
-              &apos;value&apos;: u&apos;&lt;/span&gt;\u3011&amp;nbsp;&apos;},
-             &apos;type&apos;: u&apos;BinaryExpression&apos;}],
-           &apos;callee&apos;: {&apos;computed&apos;: False,
-            &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-            &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-            &apos;type&apos;: u&apos;MemberExpression&apos;},
-           &apos;type&apos;: u&apos;CallExpression&apos;},
-          &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-         &apos;test&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-          &apos;operator&apos;: u&apos;==&apos;,
-          &apos;right&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-          &apos;type&apos;: u&apos;BinaryExpression&apos;},
-         &apos;type&apos;: u&apos;IfStatement&apos;}],
-       &apos;type&apos;: u&apos;BlockStatement&apos;},
-      &apos;test&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-       &apos;operator&apos;: u&apos;&gt;&apos;,
-       &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;},
-      &apos;type&apos;: u&apos;IfStatement&apos;}],
-    &apos;type&apos;: u&apos;BlockStatement&apos;},
-   &apos;init&apos;: {&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;init&apos;: {&apos;left&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 0.0},
-       &apos;operator&apos;: u&apos;+&apos;,
-       &apos;right&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;,
-          &apos;type&apos;: u&apos;Identifier&apos;},
-         &apos;operator&apos;: u&apos;-&apos;,
-         &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-         &apos;type&apos;: u&apos;BinaryExpression&apos;},
-        &apos;operator&apos;: u&apos;-&apos;,
-        &apos;right&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;,
-           &apos;type&apos;: u&apos;Identifier&apos;},
-          &apos;operator&apos;: u&apos;-&apos;,
-          &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-          &apos;type&apos;: u&apos;BinaryExpression&apos;},
-         &apos;operator&apos;: u&apos;%&apos;,
-         &apos;right&apos;: {&apos;name&apos;: u&apos;num&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-         &apos;type&apos;: u&apos;BinaryExpression&apos;},
-        &apos;type&apos;: u&apos;BinaryExpression&apos;},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;},
-      &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
-    &apos;kind&apos;: &apos;var&apos;,
-    &apos;type&apos;: u&apos;VariableDeclaration&apos;},
-   &apos;test&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;operator&apos;: u&apos;&lt;=&apos;,
-     &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;num&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;+&apos;,
-      &apos;right&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;,
-         &apos;type&apos;: u&apos;Identifier&apos;},
-        &apos;operator&apos;: u&apos;-&apos;,
-        &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-        &apos;type&apos;: u&apos;BinaryExpression&apos;},
-       &apos;operator&apos;: u&apos;-&apos;,
-       &apos;right&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;,
-          &apos;type&apos;: u&apos;Identifier&apos;},
-         &apos;operator&apos;: u&apos;-&apos;,
-         &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-         &apos;type&apos;: u&apos;BinaryExpression&apos;},
-        &apos;operator&apos;: u&apos;%&apos;,
-        &apos;right&apos;: {&apos;name&apos;: u&apos;num&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-        &apos;type&apos;: u&apos;BinaryExpression&apos;},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;BinaryExpression&apos;},
-    &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-    &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;operator&apos;: u&apos;&lt;&apos;,
-     &apos;right&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;type&apos;: u&apos;BinaryExpression&apos;},
-    &apos;type&apos;: u&apos;LogicalExpression&apos;},
-   &apos;type&apos;: u&apos;ForStatement&apos;,
-   &apos;update&apos;: {&apos;argument&apos;: {&apos;name&apos;: u&apos;i&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-    &apos;operator&apos;: u&apos;++&apos;,
-    &apos;prefix&apos;: False,
-    &apos;type&apos;: u&apos;UpdateExpression&apos;}},
-  {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;raw&apos;: None,
-      &apos;type&apos;: u&apos;Literal&apos;,
-      &apos;value&apos;: u&apos;&lt;br&gt;&lt;br&gt;&apos;}],
-    &apos;callee&apos;: {&apos;computed&apos;: False,
-     &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;type&apos;: u&apos;MemberExpression&apos;},
-    &apos;type&apos;: u&apos;CallExpression&apos;},
-   &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-  {&apos;alternate&apos;: {&apos;alternate&apos;: None,
-    &apos;consequent&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;raw&apos;: None,
-        &apos;type&apos;: u&apos;Literal&apos;,
-        &apos;value&apos;: u&apos;&lt;a href=&quot;t20090818_27775.html&quot;&gt;&lt;span style=&quot;color:#0033FF;font-weight:bold&quot;&gt;\u4e0a\u4e00\u9875&lt;/span&gt;&lt;/a&gt;&amp;nbsp;&apos;}],
-      &apos;callee&apos;: {&apos;computed&apos;: False,
-       &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-       &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-       &apos;type&apos;: u&apos;MemberExpression&apos;},
-      &apos;type&apos;: u&apos;CallExpression&apos;},
-     &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-    &apos;test&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;countPage&apos;,
-        &apos;type&apos;: u&apos;Identifier&apos;},
-       &apos;operator&apos;: u&apos;&gt;&apos;,
-       &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;},
-      &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-      &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-       &apos;operator&apos;: u&apos;!=&apos;,
-       &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 0.0},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;},
-      &apos;type&apos;: u&apos;LogicalExpression&apos;},
-     &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-     &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;==&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;LogicalExpression&apos;},
-    &apos;type&apos;: u&apos;IfStatement&apos;},
-   &apos;consequent&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;raw&apos;: None,
-           &apos;type&apos;: u&apos;Literal&apos;,
-           &apos;value&apos;: u&apos;&lt;a href=&quot;t20090818_27775&apos;},
-          &apos;operator&apos;: u&apos;+&apos;,
-          &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;_&apos;},
-          &apos;type&apos;: u&apos;BinaryExpression&apos;},
-         &apos;operator&apos;: u&apos;+&apos;,
-         &apos;right&apos;: {&apos;name&apos;: u&apos;prevPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-         &apos;type&apos;: u&apos;BinaryExpression&apos;},
-        &apos;operator&apos;: u&apos;+&apos;,
-        &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;.&apos;},
-        &apos;type&apos;: u&apos;BinaryExpression&apos;},
-       &apos;operator&apos;: u&apos;+&apos;,
-       &apos;right&apos;: {&apos;raw&apos;: None,
-        &apos;type&apos;: u&apos;Literal&apos;,
-        &apos;value&apos;: u&apos;html&quot;&gt;&lt;span style=&quot;color:#0033FF;font-weight:bold&quot;&gt;\u4e0a\u4e00\u9875&lt;/span&gt;&lt;/a&gt;&amp;nbsp;&apos;},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;}],
-     &apos;callee&apos;: {&apos;computed&apos;: False,
-      &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;type&apos;: u&apos;MemberExpression&apos;},
-     &apos;type&apos;: u&apos;CallExpression&apos;},
-    &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-   &apos;test&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;countPage&apos;,
-       &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;&gt;&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-     &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;!=&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 0.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;LogicalExpression&apos;},
-    &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-    &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;operator&apos;: u&apos;!=&apos;,
-     &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-     &apos;type&apos;: u&apos;BinaryExpression&apos;},
-    &apos;type&apos;: u&apos;LogicalExpression&apos;},
-   &apos;type&apos;: u&apos;IfStatement&apos;},
-  {&apos;alternate&apos;: None,
-   &apos;consequent&apos;: {&apos;expression&apos;: {&apos;arguments&apos;: [{&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;raw&apos;: None,
-           &apos;type&apos;: u&apos;Literal&apos;,
-           &apos;value&apos;: u&apos;&lt;a href=&quot;t20090818_27775&apos;},
-          &apos;operator&apos;: u&apos;+&apos;,
-          &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;_&apos;},
-          &apos;type&apos;: u&apos;BinaryExpression&apos;},
-         &apos;operator&apos;: u&apos;+&apos;,
-         &apos;right&apos;: {&apos;name&apos;: u&apos;\u4e0b\u4e00\u9875Page&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-         &apos;type&apos;: u&apos;BinaryExpression&apos;},
-        &apos;operator&apos;: u&apos;+&apos;,
-        &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: u&apos;.&apos;},
-        &apos;type&apos;: u&apos;BinaryExpression&apos;},
-       &apos;operator&apos;: u&apos;+&apos;,
-       &apos;right&apos;: {&apos;raw&apos;: None,
-        &apos;type&apos;: u&apos;Literal&apos;,
-        &apos;value&apos;: u&apos;html&quot; &gt;&lt;span style=&quot;color:#0033FF;font-weight:bold&quot;&gt;\u4e0b\u4e00\u9875&lt;/span&gt;&lt;/a&gt; &amp;nbsp;&apos;},
-       &apos;type&apos;: u&apos;BinaryExpression&apos;}],
-     &apos;callee&apos;: {&apos;computed&apos;: False,
-      &apos;object&apos;: {&apos;name&apos;: u&apos;document&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;property&apos;: {&apos;name&apos;: u&apos;write&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;type&apos;: u&apos;MemberExpression&apos;},
-     &apos;type&apos;: u&apos;CallExpression&apos;},
-    &apos;type&apos;: u&apos;ExpressionStatement&apos;},
-   &apos;test&apos;: {&apos;left&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;operator&apos;: u&apos;&gt;&apos;,
-     &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-     &apos;type&apos;: u&apos;BinaryExpression&apos;},
-    &apos;operator&apos;: u&apos;&amp;&amp;&apos;,
-    &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;currentPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-     &apos;operator&apos;: u&apos;!=&apos;,
-     &apos;right&apos;: {&apos;left&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-      &apos;operator&apos;: u&apos;-&apos;,
-      &apos;right&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 1.0},
-      &apos;type&apos;: u&apos;BinaryExpression&apos;},
-     &apos;type&apos;: u&apos;BinaryExpression&apos;},
-    &apos;type&apos;: u&apos;LogicalExpression&apos;},
-   &apos;type&apos;: u&apos;IfStatement&apos;}],
- &apos;type&apos;: u&apos;Program&apos;}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[154]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">jp</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[154]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>u&apos;Program&apos;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">jp</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[155]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>9</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">jp</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[157]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&apos;declarations&apos;: [{&apos;id&apos;: {&apos;name&apos;: u&apos;countPage&apos;, &apos;type&apos;: u&apos;Identifier&apos;},
-   &apos;init&apos;: {&apos;raw&apos;: None, &apos;type&apos;: u&apos;Literal&apos;, &apos;value&apos;: 4.0},
-   &apos;type&apos;: u&apos;VariableDeclarator&apos;}],
- &apos;kind&apos;: &apos;var&apos;,
- &apos;type&apos;: u&apos;VariableDeclaration&apos;}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[163]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">jp</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;declarations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;init&#39;</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[163]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4.0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">countPage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">scripts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;countPage = &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;//&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">countPage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">scripts</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;countPage = &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;//&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">countPage</span>
 </pre></div>
 
@@ -1303,7 +875,7 @@ a.anchor-link {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[124]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1318,7 +890,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">crawler</span><span class="p">(</span><span class="n">url_i</span><span class="p">):</span>
@@ -1349,7 +921,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 抓取47年政府工作报告内容</span>
@@ -1375,7 +947,30 @@ a.anchor-link {
 2014
 2013
 2012
-2011
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/chengjun/anaconda/lib/python2.7/site-packages/bs4/__init__.py:166: UserWarning: No parser was explicitly specified, so I&apos;m using the best available HTML parser for this system (&quot;lxml&quot;). This usually isn&apos;t a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+To get rid of this warning, change this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], &quot;lxml&quot;)
+
+  markup_type=markup_type))
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2011
 2010
 2009
 2008
